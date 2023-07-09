@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+  - name: application_summary
+    description: "Creates a summary table of all credit card applications"
+    columns:
+      - name: application_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
