@@ -1,0 +1,24 @@
+
+version: 2
+
+sources:
+  - name: application_summary
+    database: raw_data
+    schema: application_summary
+    loaded_at_field: _fivetran_synced
+    meta:
+      contains_pii: true
+      owner: "@gabe"
+    tables:
+      - name: ARRO_PROD_ARROSHAREDRES_DYNAMO_DBSTACK_APPLICATIONS_239_CE_304_T_57_ARJKCUKJO
+        identifier: app_summary
+  - name: galileo_events_postgres
+    database: raw_data
+    schema: galileo_events_postgres_public
+    loaded_at_field: _fivetran_synced
+    meta:
+      contains_pii: true
+      owner: "@gabe"
+    tables:
+      - name: users
+      
