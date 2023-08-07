@@ -2,7 +2,7 @@
 version: 2
 
 sources:
-  - name: application_summary_application_summary
+  - name: application_summary
     # database: raw_data
     # schema: application_summary
     # loaded_at_field: _fivetran_synced
