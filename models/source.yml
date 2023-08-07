@@ -10,7 +10,7 @@ sources:
     #   contains_pii: true
     #   owner: "@gabe"
     tables:
-      - name: ARRO_PROD_ARROSHAREDRES_DYNAMO_DBSTACK_APPLICATIONS_239_CE_304_T_57_ARJKCUKJO
+      - name: arro-prod-arrosharedres-dynamoDBStack-applications239CE304-T57ARJKCUKJO
         identifier: app_summary
   - name: galileo_events_postgres_public
     # database: raw_data
@@ -20,5 +20,5 @@ sources:
     #   contains_pii: true
     #   owner: "@gabe"
     tables:
-      - name: users
+      - name: Users
       
