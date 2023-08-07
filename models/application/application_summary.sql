@@ -167,7 +167,7 @@ CASE
 END AS rollout_line_assignment,
 COALESCE(CAST(credit_limit as number),parse_json(status_reason):determineCreditLineAndAprResult:creditLimitAmount::number) as initial_credit_limit,
 COALESCE(CAST(base_interest_rate as decimal(4,3)), parse_json(status_reason):determineCreditLineAndAprResult:interestRate::decimal(4,3)) as base_interest_rate
-FROM {{source('galileo_events_postgres','Users')}} b
+FROM {{source('galileo_events_postgres_public','Users')}} b
 LEFT JOIN {{source('application_summary','arro-prod-arrosharedres-dynamoDBStack-applications239CE304-T57ARJKCUKJO')}} a
     ON a.owner_id = b.id
 WHERE COALESCE(a.application_id,'') NOT IN ('934a77dc-5972-4981-8b0e-28133191c904_d7db4a0a-950b-4a49-903a-c0f1294079e7')
@@ -401,7 +401,7 @@ CASE
 END AS rollout_line_assignment,
 COALESCE(CAST(credit_limit as number),parse_json(status_reason):determineCreditLineAndAprResult:creditLimitAmount::number) as initial_credit_limit,
 COALESCE(CAST(base_interest_rate as decimal(4,3)), parse_json(status_reason):determineCreditLineAndAprResult:interestRate::decimal(4,3)) as base_interest_rate
-FROM {{source('galileo_events_postgres','Users')}} b
+FROM {{source('galileo_events_postgres_public','Users')}} b
 LEFT JOIN {{source('application_summary','arro-prod-arrosharedres-dynamoDBStack-applications239CE304-T57ARJKCUKJO')}} a
     ON a.owner_id = b.id
 WHERE COALESCE(a.application_id,'') NOT IN ('934a77dc-5972-4981-8b0e-28133191c904_d7db4a0a-950b-4a49-903a-c0f1294079e7')
